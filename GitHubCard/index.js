@@ -5,6 +5,12 @@ import axios from 'axios';
     https://api.github.com/users/<your name>
 */
 
+const followersArray = [ 'tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell', 'JovanCraft' ];
+
+followersArray.forEach(follower => {
+  getGitCard(follower)
+})
+
 function getGitCard(name){
   axios.get(`https://api.github.com/users/${name}`)
   .then(res => {
@@ -40,7 +46,6 @@ function getGitCard(name){
     user, and adding that card to the DOM.
 */
 
-const followersArray = [ tetondan, dustinmyers, justsml, luishrd, bigknell ];
 
 function gitHubCard(infoObj) {
 
